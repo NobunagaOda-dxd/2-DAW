@@ -1,3 +1,4 @@
+package PruebaInicial;
 import java.util.Scanner;
 
 public class prueba3 {
