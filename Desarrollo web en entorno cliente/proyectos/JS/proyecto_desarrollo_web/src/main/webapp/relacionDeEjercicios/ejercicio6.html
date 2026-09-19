@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="numero" placeholder="introduce numero del 2 al 9">
+    <input type="button" id="boton" onclick="calcularNumero()">
+</body>
+<script>
+
+    function calcularNumero() {
+        let number = document.getElementById("numero").value
+
+        if (number >= 2 && number <= 9) {
+            for (let index = 0; index <= 10; index++) {
+                let multiplo = number * index
+                document.write(number + " x " + index + "= "+ multiplo + "<br>")
+            }
+        } else {
+            alert("numero incorrecto")
+        }
+    }
+
+</script>
+
+</html>

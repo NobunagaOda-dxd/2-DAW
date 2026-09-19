@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 2</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--NOTAS HA TENER EN CUENTA:
+        Este proyecto ha sido utilizado la web w3schools para darle base al proyecto el color picker usado es la
+        pagina web coolors ademas tambien ha sido usa la ia para aconsejar sobre el row y el gutter y 
+        el col para encontrar la medida adecuada para fotos y distribucion luego alterada por mi a mi gusto y 
+        la creacion del footer para algun anotacion tambien fue usada la IA gracias por este warning 
+        y perdon el mucho texto y para el formato del codigo he usado un plugin de vs code
+        -->
+    <!--POR QUE LA SELECCION DE COLORES:
+        En primer lugar busque una base de morado por que la pagina web esta basada en como 
+        una tienda "friki" por asi decirlo y el morado es el color de la fruta del diablo de 
+        el protagonista de one piece una serie luego el rojo cereza del navbar es por la fruta del diablo
+        del branding del navbar luego el blanco de los textos por el contraste que genera al igual 
+        que el azulado gris de el background de las cards es para que el contraste sea mayor y por 
+        el azul de kyogre un pokemon evocando al mar en los botones 
+        he dejado el primary base del boostrap de w3Schools y has ahi la explicacion buen finde rafa =) 
+
+        -->
+
+
+    <style>
+        /* Definimos los colores una vez en variables CSS */
+        :root {
+            --color-background: #15131A;
+
+            --color-surface: #1C3144;
+
+            --color-primary: #613F75;
+
+            --color-text: #FDFBFF;
+
+            --color-text-secondary: #3E000C;
+        }
+
+        body {
+            background-color: var(--color-background);
+        }
+
+        nav {
+            background-color: var(--color-text-secondary);
+        }
+
+        nav .navlink {
+            color: var(--color-text);
+        }
+
+        nav .navar-brand {
+            color: var(--color-text);
+        }
+
+        #contenedor {
+            background-color: var(--color-primary);
+        }
+
+        #contenedor .card {
+            background-color: var(--color-surface);
+            color: var(--color-text);
+        }
+
+        #contenedor .card .card-title {
+            color: var(--color-text);
+        }
+
+        #contenedor .card .card-text {
+            color: var(--color-text);
+        }
+
+        .footer-custom {
+            background-color: var(--color-background);
+            color: var(--color-text);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="reto2.html">
+                <img src="wp14008008.jpg" alt="Logo de la tienda" width="30" height="30"
+                    class="d-inline-block align-text-top me-2">
+                GomuStore
+            </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">zone of pokemon</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">zone of anime</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">zone of merch</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-5" id="contenedor">
+        <div class="row g-4">
+
+            <!-- Tarjeta 1: La columna es el contenedor, la tarjeta va dentro -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="naruto-manga-1560x880.jpg.webp" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">1ª naruto</h4>
+                        <p class="card-text">Primer tomo de la<br>
+                            saga de naruto</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="naruto-manga-1560x880.jpg.webp" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">2ª Naruto</h4>
+                        <p class="card-text">Segundo tomo de la<br>
+                            saga de naruto</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="naruto-manga-1560x880.jpg.webp" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">3ª Naruto</h4>
+                        <p class="card-text">Tercer tomo de la<br>
+                            saga naruto</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="naruto-manga-1560x880.jpg.webp" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">4ª naruto</h4>
+                        <p class="card-text">primer tomo de la famosa <br>
+                            saga de naruto</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="naruto-manga-1560x880.jpg.webp" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">5ª naruto</h4>
+                        <p class="card-text">Quinto tomo de la<br>
+                            saga de naruto</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <img class="card-img-top" src="naruto-manga-1560x880.jpg.webp" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">6ª naruto</h4>
+                        <p class="card-text">Sexto tomo de la<br>
+                            saga de naruto</p>
+                        <a href="#" class="btn btn-primary">comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer-custom text-center py-4">
+        <p class="mb-0">Diseñado por Jesús Zambrano Montero | 2-DAW</p>
+    </footer>
+
+</body>
+
+</html>

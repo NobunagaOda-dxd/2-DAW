@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Adivinando el numero</h1>
+    <input type="number" id="number" placeholder="introduce un numero">
+    <input type="button" value="es el numero?" onclick="probarSiEsElNumero()">
+</body>
+    <script>
+        let numeroAdivinar = Math.floor(Math.random() * 100) + 1;
+        let intentos = 1;
+        function probarSiEsElNumero(){
+            let numero = document.getElementById("number").value
+                if (numero == numeroAdivinar) {
+                    document.write("lo has conseguido has adivinado el numero")
+                    document.write(numeroAdivinar)
+                    numeroAdivinar = Math.floor(Math.random() * 100) + 1;
+                    intentos = 1
+
+                } else if(numero > numeroAdivinar && intentos < 10){
+                    alert("el numero es mas bajo del introducido " + "intento = " + intentos )
+                    intentos++
+                }else if(numero < numeroAdivinar && intentos < 10){
+                    alert("el numero es mas alto del introducido " + "intento = " + intentos )
+                    intentos++
+                }else{
+                    document.write("has perdido el numero era " + numeroAdivinar) 
+                    numeroAdivinar = Math.floor(Math.random() * 100) + 1;
+                    intentos = 1
+                }
+                
+            
+        }
+    </script>
+</html>
