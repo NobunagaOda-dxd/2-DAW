@@ -1,0 +1,71 @@
+        /* Definimos los colores una vez en variables CSS */
+        :root {
+            --color-background: #15131A;
+            --color-surface: #1C3144;
+            --color-primary: #613F75;
+            --color-text: #FDFBFF;
+            --color-text-secondary: #3E000C;
+
+            --font-titulos: "Bebas Neue", sans-serif;
+            --font-textos: "Nunito", sans-serif;
+            --fs-base: 1rem;
+            --fs-small: 0.875rem;
+            --fs-h1: clamp(2rem, 5vw, 4rem); --fs-h2: clamp(1.5rem, 3vw, 2.5rem);
+
+
+        }
+
+        body {
+            background-color: var(--color-background);
+            font-family: var(--font-textos);
+            font-size: var(--fs-base);
+            line-height: 1.6;
+        }
+
+        p{
+            font-family: var(--font-textos);
+            font-size: var(--fs-base);
+        }
+
+        nav {
+            background-color: var(--color-text-secondary);
+        }
+
+        h1,h2, .card-title {
+            font-family: var(--font-titulos);
+            letter-spacing: 1px;
+        }
+
+
+
+        nav .navlink {
+            color: var(--color-text);
+        }
+
+        nav .navar-brand {
+            color: var(--color-text);
+        }
+
+        #contenedor {
+            background-color: var(--color-primary);
+        }
+
+        #contenedor .card {
+            background-color: var(--color-surface);
+            color: var(--color-text);
+        }
+
+        #contenedor .card .card-title {
+            color: var(--color-text);
+        }
+
+        #contenedor .card .card-text {
+            color: var(--color-text);
+        }
+
+        .footer-custom {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            font-size: var(--fs-small);
+        }
+
