@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Nova</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+    <!--TECNOLOGIAS USADAS EN ESTE PROYECTO
+    He usado geminis para encontrar algunos errores que estaban escondidos en la zona css por que me he perdido un poco
+    ademas que me ha aconsejado y guiado sobre la practica aunque las decisiones de usar lucide la he tomado yo ademas 
+    de la seleccion de iconos de lucide atraves de su pagina web oficial ademas he añadido un tooltip para las zonas donde
+    solo ahi iconos con la funcion title, gracias por leer buen dia rafa =)
+    -->
+<body>
+
+    <header>
+        <div class="logo">BN</div>
+        <div>
+            <h1>Biblioteca Nova</h1>
+            <small>Panel de gestión</small>
+        </div>
+        <button class="top-button"><i data-lucide="bell"></i></button>
+    </header>
+
+    <div class="layout">
+
+        <aside>
+            <h2>Menú</h2>
+            <a class="menu active" href="#"><i data-lucide="home"></i>Inicio</a>
+            <a class="menu" href="#"><i data-lucide="book-open"></i> Catálogo</a>
+            <a class="menu" href="#"><i data-lucide="repeat"></i> Préstamos</a>
+            <a class="menu" href="#"><i data-lucide="users"></i> Usuarios</a>
+            <a class="menu" href="#"><i data-lucide="settings"></i> Configuración</a>
+            <hr>
+
+            <a class="menu" href="#"><i data-lucide="help-circle"></i>Ayuda</a>
+        </aside>
+
+        <main>
+
+            <section class="welcome">
+                <div>
+                    <p class="blue">PANEL PRINCIPAL</p>
+                    <h2>Resumen de la biblioteca</h2>
+                    <p>Consulta rápidamente la actividad de hoy.</p>
+                </div>
+
+                <div class="huge-icon"><i data-lucide="book-open"></i></div>
+            </section>
+
+            <section class="cards">
+
+                <article class="card">
+                    <div class="card-icon"><i data-lucide="book-open"></i></div>
+                    <span>Libros prestados</span>
+                    <strong>1284</strong>
+                    <small>Este mes</small>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon"><i data-lucide="users"></i></div>
+                    <span>Usuarios activos</span>
+                    <strong>684</strong>
+                    <small>Últimos 30 días</small>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon"><i data-lucide="repeat"></i></div>
+                    <span>Reservas pendientes</span>
+                    <strong>37</strong>
+                    <small>Requieren revisión</small>
+                </article>
+            </section>
+
+            <section class="panel">
+                <div class="panel-title">
+                    <div>
+                        <h2>Préstamos recientes</h2>
+                        <small>Últimas operaciones</small>
+                    </div>
+
+                    <button class="dots">...</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Libro</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Laura Castro</td>
+                            <td>El infinito en un junco</td>
+                            <td><span class="ok">Activo</span></td>
+                            <td>
+                                <button class=""><i data-lucide="eye"></i></button>
+                                <button class=""><i data-lucide="pencil"></i></button>
+                                <button class=""><i data-lucide="trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Jorge Pérez</td>
+                            <td>1984</td>
+                            <td><span class="pending">Pendiente</span></td>
+                            <td>
+                                <button class=""><i data-lucide="eye"></i></button>
+                                <button class=""><i data-lucide="pencil"></i></button>
+                                <button class=""><i data-lucide="trash"></i></button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>María Gómez</td>
+                            <td>La sombra del viento</td>
+                            <td><span class="late">Retrasado</span></td>
+                            <td>
+                                <button class=""><i data-lucide="eye"></i></button>
+                                <button class=""><i data-lucide="pencil"></i></button>
+                                <button class=""><i data-lucide="trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="panel quick">
+                <div class="panel-title">
+                    <div>
+                        <h2>Acciones rápidas</h2>
+                        <small>Acciones habituales</small>
+                    </div>
+                </div>
+
+                <div class="quick-buttons">
+
+                    <button class="quick-button " title="Añadir registros">
+                        <span class=""><i data-lucide="plus"></i></span>
+                    </button>
+
+                    <button class="quick-button" title="Eliminar">
+                        <span class="icon"><i data-lucide="trash"></i></span>
+                    </button>
+
+                    <button class="quick-button" title="Usuarios activos"><i data-lucide="users"></i></button>
+
+                    <button class="quick-button " title="Buscar registro">
+                        <span class="icon"><i data-lucide="search"></i></span>
+                    </button>
+
+                </div>
+            </section>
+
+            <section class="notice">
+                <span class=""><i data-lucide="triangle-alert"></i></span>
+                <div>
+                    <strong>Hay 5 incidencias</strong>
+                    <p>Algunas operaciones necesitan tu atención.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+<script>
+    lucide.createIcons();
+</script>
+
+</html>
