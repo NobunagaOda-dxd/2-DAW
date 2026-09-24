@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-4</title>
+</head>
+
+<body>
+    <div id="pantalla"></div>
+
+</body>
+<script>
+    let array = [6, "pepe", 2, "juan"]
+    let mayor
+    let resultado = []
+    if (array[1] > array[3]) {
+        mayor = array[1]
+    } else {
+        mayor = array[3]
+    }
+
+    resultado.push(array[0] * array[2])
+    resultado.push(array[0] + array[2])
+    resultado.push(array[0] - array[2])
+    resultado.push(array[0] / array[2])
+
+    document.getElementById('pantalla').innerHTML = `
+    <strong>Todas las cuentas basicas son:</strong> ${resultado} <br><br>
+    <strong>La palabra mas grande ordenada alfabeticamente:</strong> ${mayor}
+`;
+</script>
+
+</html>

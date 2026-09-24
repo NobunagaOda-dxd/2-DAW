@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-3</title>
+</head>
+
+<body>
+    <div id="pantalla">
+
+    </div>
+</body>
+<script>
+    let num = 1
+    let numbers = []
+    let resultado = 0
+    let turno = 0
+    do {
+        if (num % 11 == 0 && num < 3000) {
+            numbers[turno] = num
+            resultado += num
+            turno++
+        }
+        num++
+    } while (num <= 3000);
+    document.getElementById('pantalla').innerHTML = `
+    <strong>El resultado total es:</strong> ${resultado} <br><br>
+    <strong>Los múltiplos son:</strong> ${numbers}
+`;
+
+</script>
+
+</html>

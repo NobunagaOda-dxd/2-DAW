@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejercicio-5b</title>
+</head>
+
+<body>
+    <input type="text" id="dni" placeholder="introduce tu dni comprar es valido">
+    <input type="button" value="comprobar la letra" onclick="comprobarNumeros()">
+    <div id="ventana">
+
+    </div>
+</body>
+<script>
+    function comprobarNumeros() {
+        let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+        let textodni = document.getElementById("dni").value
+        let num = parseInt(textodni.slice(0,-1))
+        let letra = textodni.slice(-1).toUpperCase()
+        let index = num % 23;
+
+        if (letra === letras[index]) {
+            document.getElementById("ventana").innerHTML = "La letra es valida"
+        } else {
+            document.getElementById("ventana").innerHTML = "La letra no es valida"
+        }
+    }
+</script>
+
+</html>

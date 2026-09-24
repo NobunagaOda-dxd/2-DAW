@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-7</title>
+</head>
+
+<body>
+    <input type="text" id="frase" placeholder="introduce una cadena de texto">
+    <input type="button" value="pulsa para comprobar" onclick="comprobarEsFraseMayuscula()">
+    <div id="pantalla">
+
+    </div>
+</body>
+<script>
+    function comprobarEsFraseMayuscula() {
+        let fraseAComprobar = document.getElementById("frase").value
+        let todoMinusculas = fraseAComprobar.toLowerCase()
+        let todoMayusculas = fraseAComprobar.toUpperCase()
+        if (fraseAComprobar === todoMinusculas) {
+            document.getElementById("pantalla").innerHTML = "La frase es entera en minusculas"
+        } else if(fraseAComprobar === todoMayusculas) {
+            document.getElementById("pantalla").innerHTML = "La frase es entera en mayusculas"
+        } else {
+            document.getElementById("pantalla").innerHTML = "La frase tiene minusculas y mayusculas"
+        }
+    }
+</script>
+
+</html>

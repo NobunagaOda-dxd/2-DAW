@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-8</title>
+</head>
+<body>
+    <input type="text" id="fraseAComprobar" placeholder="comprobar es palindrom">
+    <input type="button" value="comprobar" onclick="esPalindromo()">
+    <div id="ventana">
+
+    </div>
+</body>
+    <script>
+        function esPalindromo(){
+           let frase = document.getElementById("fraseAComprobar").value
+            let fraseLimpia = frase.toLowerCase().replaceAll(" ","")
+
+            let fraseReverse = fraseLimpia.split("").reverse().join("")
+
+            if(fraseLimpia === fraseReverse){
+                document.getElementById("ventana").innerHTML = "La frase es palindroma"
+            }else{
+                document.getElementById("ventana").innerHTML = "La frase no es palindroma"
+            }
+        }
+    </script>
+</html>

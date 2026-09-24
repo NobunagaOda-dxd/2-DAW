@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-2</title>
+</head>
+
+<body>
+    <div id="pantalla">
+
+    </div>
+    <input type="number" id="numero" placeholder="introduce 10 numeros">
+    <input type="button" value="" onclick="sumarDiezNumeros()">
+
+</body>
+<script>
+    let numeros = []
+    function sumarDiezNumeros() {
+        let num = document.getElementById('numero').value
+        let number = parseInt(num)
+        let resultado = 0
+        numeros.push(number)
+        if (numeros.length == 10) {
+            for (let index = 0; index < numeros.length; index++) {
+                resultado += numeros[index]
+            }
+            document.getElementById('pantalla').innerHTML = "El resultado es: " + resultado;
+
+        } else {
+            alert('Numero guardado')
+        }
+
+    }
+</script>
+
+</html>
