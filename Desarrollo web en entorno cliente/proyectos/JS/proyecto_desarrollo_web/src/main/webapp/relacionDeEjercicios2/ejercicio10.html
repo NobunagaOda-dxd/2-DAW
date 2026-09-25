@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-10</title>
+</head>
+<body>
+    <div id="ventana">
+
+    </div>
+</body>
+    <script>
+        let miMapa = new Map()
+        miMapa.set(1,"Enero")
+        miMapa.set(2,"Febrero")
+        miMapa.set(3,"Marzo")
+        miMapa.set(4,"Abril")
+        miMapa.set(5,"Mayo")
+        miMapa.set(6,"Junio")
+        miMapa.set(7,"Julio")
+        miMapa.set(8,"Agosto")
+        miMapa.set(9,"Septiembre")
+        miMapa.set(10,"Octubre")
+        miMapa.set(11,"Noviembre")
+        miMapa.set(12,"Diciembre")
+
+        miMapa.set(13,"NuevoMes")
+        miMapa.delete(5)
+
+        console.log(miMapa)
+
+        if (miMapa.has(5) == true && miMapa.has(6)) {
+            console.log("Si existen mayo y junio")
+        } else {
+            console.log("No existen alguno de los dos")
+        }
+
+        let arrayMeses = Array.from(miMapa)
+        arrayMeses.shift()
+
+        console.log(arrayMeses)
+        console.log(miMapa)
+    </script>
+</html>

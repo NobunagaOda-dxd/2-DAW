@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-9</title>
+</head>
+<body>
+    <div id="ventana">
+
+    </div>
+</body>
+    <script>
+        let meses = new Set(["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre"
+            ,"Noviembre","Diciembre"
+        ])
+
+        console.log(meses)
+        meses.add("NuevoMes")
+        console.log(meses)
+
+        if (meses.has("Mayo") === true && meses.has("Junio") === true) {
+        console.log("si existe")
+        }else{
+        console.log("no existen")
+        }
+        meses.delete("Mayo")
+        console.log(meses)
+        let arrayMeses = Array.from(meses)
+        console.log(arrayMeses)
+        arrayMeses.shift()
+        console.log(meses)
+
+    </script>
+</html>
