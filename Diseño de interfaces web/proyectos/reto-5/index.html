@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beast App - Demo Guía de Estilos</title>
+    <!-- Fuentes (Punto 2 del Reto 5) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Iconografía Lucide (Punto 3 del Reto 5) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Buenas rafa para la la ultima actividad de este bloque he usado la IA en este caso geminis y claude para el echo
+ de sintetizar conceptos ademas de aprender clases nuevas que se ven en esta actividad como main aside entre otras
+ todas las cosas utilizadas en este html css y clases de boostrap son de mis proyectos antiguos y ademas 
+ de sobre todo el reto 4 que tu nos proporcionaste ademas la IA me ha ayudado a dar formato a mis palabras en un pdf muy
+ bien escrito y estructurado por mi parte repito la IA SOLO HA DADO FORMATO EL CONTENIDO FUE ESCRITO POR MI AL IGUAL 
+ QUE LAS IDEAS DE LAS TABLAS espero te guste la idea ademas añadi el footer que me pediste La estructura de este proyecto y
+ los comentarios del codigo fueron echos por mi y la IA para ayudar a su claridad gracias por ver buen dia  -->
+
+    <div class="app-layout">
+        
+        <!-- SIDEBAR FIJO -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1 class="text-primary">BEAST</h1>
+            </div>
+            <nav class="menu-nav">
+                <a href="#" class="menu-item active"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+                <a href="#" class="menu-item"><i data-lucide="dumbbell"></i> Entrenamientos</a>
+                <a href="#" class="menu-item"><i data-lucide="utensils"></i> Nutrición</a>
+                <a href="#" class="menu-item"><i data-lucide="target"></i> Objetivos</a>
+            </nav>
+        </aside>
+
+        <!-- CONTENEDOR PRINCIPAL Y FOOTER -->
+        <div class="main-wrapper">
+            
+            <main class="dashboard-content">
+                
+                <!-- HEADER (H2, H3, Textos y Botones con icono) -->
+                <header class="dashboard-header">
+                    <div>
+                        <h2>Resumen de hoy</h2>
+                        <p class="text-secondary">Jesús, estás a un entrenamiento de tu mejor versión.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-icon" title="Notificaciones"><i data-lucide="bell"></i></button>
+                        <button class="btn-primary"><i data-lucide="play"></i> Iniciar Sesión</button>
+                    </div>
+                </header>
+
+                <!-- SECCIÓN 1: ENTRENAMIENTO (Cards completas - Punto 5 del Reto 5) -->
+                <section class="content-section">
+                    <div class="section-title">
+                        <h3>Rutina Programada</h3>
+                    </div>
+                    <div class="cards-grid">
+                        
+                        <!-- Card Pro (Cumple todos los requisitos de la rúbrica) -->
+                        <article class="card">
+                            <div class="card-header">
+                                <div class="card-icon"><i data-lucide="dumbbell"></i></div>
+                                <div>
+                                    <h3 class="card-title">Pecho y Tríceps (Hipertrofia)</h3>
+                                    <small class="text-aux text-secondary">Actualizado hace 2 horas</small>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p>Circuito pesado enfocado en el desarrollo del pectoral superior y bombeo de tríceps.</p>
+                                <div class="card-meta">
+                                    <span class="badge info"><i data-lucide="clock"></i> 75 min</span>
+                                    <span class="badge"><i data-lucide="flame"></i> Alto impacto</span>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-primary"><i data-lucide="play"></i> Empezar</button>
+                                <button class="btn-secondary"><i data-lucide="settings"></i> Ajustes</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- SECCIÓN 2: NUTRICIÓN -->
+                <section class="content-section">
+                    <div class="section-title">
+                        <h3>Alimentación (Macros)</h3>
+                    </div>
+                    <div class="cards-grid">
+                        
+                        <!-- Card de Nutrición -->
+                        <article class="card">
+                            <div class="card-header">
+                                <div class="card-icon text-primary"><i data-lucide="beef"></i></div>
+                                <div>
+                                    <h3 class="card-title">Proteína Diaria</h3>
+                                    <small class="text-aux text-secondary">Fase de volumen</small>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="macro-value">160g <span class="text-secondary">/ 180g</span></p>
+                            </div>
+                            <!-- Botón de acción destructiva (Punto 4 del Reto 5) -->
+                            <div class="card-actions">
+                                <button class="btn-destructive"><i data-lucide="trash-2"></i> Resetear dieta</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- FOOTER AL FINAL DE LA PÁGINA -->
+            <footer class="app-footer">
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" class="social-icon" title="Twitter"><i data-lucide="twitter"></i></a>
+                </div>
+                <p class="text-secondary text-aux">© 2024 Beast App. Guía de Estilos - Reto 5.</p>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- Activador de Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
