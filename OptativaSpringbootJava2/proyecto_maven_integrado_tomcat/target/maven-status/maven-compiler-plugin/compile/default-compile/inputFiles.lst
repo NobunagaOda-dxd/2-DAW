@@ -1,0 +1,7 @@
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/LibroPutServlet.java
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/crud/ControladorLibro.java
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/crud/Libro.java
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/PrimerServlet.java
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/LibroAddServlet.java
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/LibroDeleteServlet.java
+/home/nobunaga/Documentos/2-DAW/OptativaSpringbootJava2/proyecto_maven_integrado_tomcat/src/main/java/org/daw/servlets/LibroGetServlet.java

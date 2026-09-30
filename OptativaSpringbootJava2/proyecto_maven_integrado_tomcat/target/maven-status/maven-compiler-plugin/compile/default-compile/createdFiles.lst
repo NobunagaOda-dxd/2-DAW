@@ -1,0 +1,7 @@
+org/daw/servlets/PrimerServlet.class
+org/daw/servlets/crud/ControladorLibro.class
+org/daw/servlets/LibroAddServlet.class
+org/daw/servlets/LibroDeleteServlet.class
+org/daw/servlets/LibroPutServlet.class
+org/daw/servlets/crud/Libro.class
+org/daw/servlets/LibroGetServlet.class
