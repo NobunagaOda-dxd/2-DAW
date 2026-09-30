@@ -39,7 +39,7 @@ public class LibroAddServlet extends HttpServlet {
             );
 
             response.getWriter().println(
-                    "Faltan los parámetros nombre y edad."
+                    "Faltan los parámetros titulo y año publicacíon."
             );
 
             return;

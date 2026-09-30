@@ -57,7 +57,7 @@ public class LibroDeleteServlet extends HttpServlet {
         }
 
         response.setStatus(
-                HttpServletResponse.SC_NO_CONTENT
+                HttpServletResponse.SC_OK
         );
     }
 }
