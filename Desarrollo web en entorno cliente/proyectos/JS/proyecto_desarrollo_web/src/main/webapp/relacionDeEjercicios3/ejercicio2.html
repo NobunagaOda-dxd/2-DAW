@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio-2</title>
+</head>
+<body>
+    <div id="ventana"></div>
+
+    <script>
+        class Empresa {
+            constructor(nombre, direccion, telefono, nif) {
+                this.nombre = nombre;
+                this.direccion = direccion;
+                this.telefono = telefono;
+                this.nif = nif;
+            }
+        }
+
+        class Cliente {
+            constructor(numCliente, dni, nombre, domicilio, cp, ciudad, provincia) {
+                this.numCliente = numCliente;
+                this.dni = dni;
+                this.nombre = nombre;
+                this.domicilio = domicilio;
+                this.cp = cp;
+                this.ciudad = ciudad;
+                this.provincia = provincia;
+            }
+        }
+
+        class Producto {
+            constructor(descripcion, precio, cantidad) {
+                this.descripcion = descripcion;
+                this.precio = precio;
+                this.cantidad = cantidad;
+            }
+        }
+
+        class DatosFactura {
+            constructor(empresa, cliente, arrayProductos) {
+                this.empresa = empresa;
+                this.cliente = cliente;
+                this.arrayProductos = arrayProductos;
+            }
+        }
+
+        class Factura extends DatosFactura {
+            constructor(empresa, cliente, arrayProductos, metodoDePago) {
+                super(empresa, cliente, arrayProductos); 
+                this.metodoDePago = metodoDePago;
+                this.importeTotal = 0; 
+            }
+
+            calcularTotal() {
+                let total = 0;
+                for (let i = 0; i < this.arrayProductos.length; i++) {
+                    total += this.arrayProductos[i].cantidad * this.arrayProductos[i].precio; 
+                }
+                this.importeTotal = total;
+                alert("El importe total de la factura es: " + this.importeTotal + "€");
+            }
+        }
+
+        
+        let miEmpresa = new Empresa("Tech SL", "Calle Falsa 123", "123456789", "B1234567");
+        let miCliente = new Cliente(1, "11111111A", "Juan Pérez", "Su casa", "28000", "Madrid", "Madrid");
+        
+        let misProductos = [
+            new Producto("Teclado", 50, 2),
+            new Producto("Ratón", 20, 1)    
+        ];
+        
+        let miFactura = new Factura(miEmpresa, miCliente, misProductos, "Tarjeta");
+        
+        miFactura.calcularTotal(); 
+        
+    </script>
+</body>
+</html>
