@@ -15,52 +15,49 @@ public class LibroAddServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * Procesa las peticiones HTTP POST.
-     */
     @Override
-    protected void doPost(
-            HttpServletRequest request,
-            HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Devolvemos una respuesta de texto.
-        response.setContentType("text/plain;charset=UTF-8");
+        response.setContentType("application/xml;charset=UTF-8");
 
-        // Obtenemos los datos enviados como query parameters.
-        String titulo = request.getParameter("titulo");
-        String anioParam = request.getParameter("anio");
+        String tituloParam = request.getParameter("titulo");
 
-        // Comprobamos que se hayan recibido los dos parámetros.
-        if (titulo == null || anioParam == null) {
+        String anioParam = request.getParameter("anioPublicacion");
 
-            response.setStatus(
-                    HttpServletResponse.SC_BAD_REQUEST
-            );
+        if (tituloParam == null || anioParam == null) {
 
-            response.getWriter().println(
-                    "Faltan los parámetros titulo y año publicacíon."
-            );
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+            response.getWriter().print(XmlUtil.error("Faltan los parámetros titulo y año."));
 
             return;
         }
 
-        int anio = Integer.parseInt(anioParam);
+        try {
 
-        Libro libro =
-                ControladorLibro.crear(titulo, anio);
+            int anio = Integer.parseInt(anioParam);
 
-        // HTTP 201 indica que se ha creado un nuevo recurso.
-        response.setStatus(
-                HttpServletResponse.SC_CREATED
-        );
+            Libro libro = ControladorLibro.crear(tituloParam, anio);
 
-        response.getWriter().println(
-                "Libro creado correctamente."
-        );
+            String xml = """
+					<?xml version="1.0" encoding="UTF-8"?>
+					<respuesta>
+					    <operacion>crear</operacion>
+					    <mensaje>Libro creado correctamente.</mensaje>
+					    %s
+					</respuesta>
+					""".formatted(XmlUtil.libro(libro));
 
-        response.getWriter().println(
-                "ID asignado: " + libro.getId()
-        );
+            response.setStatus(HttpServletResponse.SC_CREATED);
+
+            response.getWriter().print(xml);
+
+        } catch (NumberFormatException e) {
+
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+            response.getWriter().print(XmlUtil.error("El año debe ser un número entero."));
+        }
     }
 }

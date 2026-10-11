@@ -16,48 +16,55 @@ public class LibroDeleteServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
-    protected void doDelete(
-            HttpServletRequest request,
-            HttpServletResponse response)
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.setContentType("text/plain;charset=UTF-8");
+        response.setContentType("application/xml;charset=UTF-8");
 
         String idParam = request.getParameter("id");
 
         if (idParam == null) {
 
-            response.setStatus(
-                    HttpServletResponse.SC_BAD_REQUEST
-            );
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
 
-            response.getWriter().println(
-                    "Debe indicar el parámetro id."
-            );
+            response.getWriter().print(XmlUtil.error("Debe indicar el parámetro id."));
 
             return;
         }
 
-        int id = Integer.parseInt(idParam);
+        try {
 
-        boolean eliminado =
-                ControladorLibro.eliminar(id);
+            int id = Integer.parseInt(idParam);
 
-        if (!eliminado) {
+            boolean eliminado = ControladorLibro.eliminar(id);
 
-            response.setStatus(
-                    HttpServletResponse.SC_NOT_FOUND
-            );
+            if (!eliminado) {
 
-            response.getWriter().println(
-                    "Libro no encontrada."
-            );
+                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 
-            return;
+                response.getWriter().print(XmlUtil.error("LIbro no encontrado en la biblioteca."));
+
+                return;
+            }
+
+            String xml = """
+					<?xml version="1.0" encoding="UTF-8"?>
+					<respuesta>
+					    <operacion>eliminar</operacion>
+					    <mensaje>Libro eliminado correctamente.</mensaje>
+					    <id>%d</id>
+					</respuesta>
+					""".formatted(id);
+
+            response.setStatus(HttpServletResponse.SC_OK);
+
+            response.getWriter().print(xml);
+
+        } catch (NumberFormatException e) {
+
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+
+            response.getWriter().print(XmlUtil.error("El parámetro id debe ser un número entero."));
         }
-
-        response.setStatus(
-                HttpServletResponse.SC_OK
-        );
     }
 }
